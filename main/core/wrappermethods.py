@@ -19,7 +19,7 @@ class WrapperMethods(object):
     def maximize(self):
         self._driver.maximize_window()
 
-    def close(self):
+    def quit(self):
         self._driver.quit()
 
     def find_by_xpath(self, xpath):

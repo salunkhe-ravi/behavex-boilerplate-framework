@@ -43,4 +43,4 @@ class WebDriverFactory():
         WrapperMethods.maximize()
         # Loading browser with App URL
         WrapperMethods.open()
-        return driver
+        return WrapperMethods(driver)
