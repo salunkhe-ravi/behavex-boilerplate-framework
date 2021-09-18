@@ -1,11 +1,11 @@
-from main.core.webdriverfactory import WebDriverFactory
 import pytest
+from main.core.webdriverfactory import WebDriverFactory
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture
-def driver_init(request, browser):
+def driver_init(request, browser='chrome'):
 
     d = WebDriverFactory(browser=browser)
     driver = d.get_webdriver_instance()

@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from utilities import json_util
+from main.utilities.json_util import JsonUtils as JSONUtils
+from traceback import print_stack
 
 
 class WrapperMethods(object):
@@ -14,7 +15,7 @@ class WrapperMethods(object):
         self._driver = driver
 
     def open(self):
-        self._driver.get(json_util.get_value('base_url'))
+        self._driver.get(JSONUtils.get_value('base_url'))
 
     def maximize(self):
         self._driver.maximize_window()
@@ -30,3 +31,45 @@ class WrapperMethods(object):
 
     def find_by_id(self, id):
         return self._driver_wait.until(EC.visibility_of_element_located((By.ID, id)))
+
+    def click_by_id(self, id):
+        try:
+            element = self.find_by_id(id=id)
+            element.click()
+        except:
+            print_stack()
+
+    def click_by_name(self, name):
+        try:
+            element = self.find_by_name(name=name)
+            element.click()
+        except:
+            print_stack()
+
+    def click_by_xpath(self, xpath):
+        try:
+            element = self.find_by_xpath(xpath=xpath)
+            element.click()
+        except:
+            print_stack()
+
+    def enter_text_by_id(self, id, text):
+        try:
+            element = self.find_by_id(id=id)
+            element.send_keys(text)
+        except:
+            print_stack()
+
+    def enter_text_by_name(self, name, text):
+        try:
+            element = self.find_by_name(name=name)
+            element.send_keys(text)
+        except:
+            print_stack()
+
+    def enter_text_by_xpath(self, xpath, text):
+        try:
+            element = self.find_by_xpath(xpath=xpath)
+            element.send_keys(text)
+        except:
+            print_stack()

@@ -1,8 +1,6 @@
-from main.core.wrappermethods import WrapperMethods
-import traceback
+
 from selenium import webdriver
-import os
-from utilities import json_util
+from main.core.wrappermethods import WrapperMethods
 from webdriver_manager.chrome import ChromeDriverManager
 
 
@@ -24,7 +22,6 @@ class WebDriverFactory():
         Returns:
             'WebDriver Instance'
         """
-        base_url = json_util.get_value('base_url')
         if self.browser == "iexplorer":
             # Set ie driver
             driver = webdriver.Ie()
@@ -38,9 +35,9 @@ class WebDriverFactory():
             driver = webdriver.Firefox()
 
         # Setting Driver Implicit Time out for An Element
-        driver.implicitly_wait(3)
+        # driver.implicitly_wait(3)
         # Maximize the window
-        WrapperMethods.maximize()
+        WrapperMethods.maximize(self)
         # Loading browser with App URL
-        WrapperMethods.open()
+        WrapperMethods.open(self)
         return WrapperMethods(driver)
