@@ -3,6 +3,7 @@ from behave import given, when, then, step
 
 @given('we have "{txt}" installed')
 def step_impl(context, txt):
+    context.wrapper.open('https://www.wikipedia.org/')
     print("This is the text: "+ txt)
 
 @when('we implement {number:d} tests')
