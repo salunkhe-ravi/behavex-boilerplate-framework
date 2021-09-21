@@ -3,24 +3,28 @@ Feature: Showing off behave
 
     @one
     Scenario: Run a simple test1
-        Given we have "behave" installed
-        When we implement 5 tests
-        Then behave will test them for us!
+        Given user navigates to the site
+        When user enters "Sachin Tendulkar" in the search box
+        And user clicks on the search button
+        Then user lands on search page
 
     @two
     Scenario: Run a simple test2
-        Given we have "behave" installed
-        When we implement 5 tests
-        Then behave will test them for us!
+        Given user navigates to the site
+        When user enters "Selenium" in the search box
+        And user clicks on the search button
+        Then user lands on search page
 
     @three
     Scenario: Run a simple test3
-        Given we have "behave" installed
-        When we implement 5 tests
-        Then behave will test them for us!
+        Given user navigates to the site
+        When user enters "Cucumber" in the search box
+        And user clicks on the search button
+        Then user lands on search page
 
     @four
     Scenario: Run a simple test4
-        Given we have "behave" installed
-        When we implement 5 tests
-        Then behave will test them for us!
+        Given user navigates to the site
+        When user enters "python" in the search box
+        And user clicks on the search button
+        Then user lands on search page

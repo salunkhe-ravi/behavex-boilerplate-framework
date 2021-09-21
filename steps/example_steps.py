@@ -1,23 +1,22 @@
 # -- FILE: features/steps/example_steps.py
 from behave import given, when, then, step
+from utils.util import get_profiles_value
 
-
-@given('we have "{txt}" installed')
-def step_impl(context, txt):
-    context.wrapper.open('https://www.wikipedia.org/')
-    print("This is the text: " + txt)
-
-
-@when('we implement {number:d} tests')
-def step_impl(context, number):  # -- NOTE: number is converted into integer
-    context.wrapper.enter_text_by_id('searchInput', 'Sachin Tendulkar')
-    # assert number > 1 or number == 0
-    # context.tests_count = number
-
-
-@then('behave will test them for us!')
+@given('user navigates to the site')
 def step_impl(context):
-    context.wrapper.click_element_by_xpath(
-        "//i[@class='sprite svg-search-icon']")
-    # assert context.failed is False
-    # assert context.tests_count >= 0
+    context.wrapper.open(get_profiles_value(context,'app_url'))
+
+
+@when('user enters "{data}" in the search box')
+def step_impl(context, data):
+    context.wrapper.enter_text_by_id('searchInput',data)
+
+
+@when('user clicks on the search button')
+def step_impl(context):
+    context.wrapper.click_element_by_xpath("//i[@class='sprite svg-search-icon']")
+
+
+@then('user lands on search page')
+def step_impl(context):
+    pass

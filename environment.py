@@ -15,23 +15,25 @@ def before_all(context):
             driver = get_browser('edge')
             context.wrapper = driver
     except:
-        print("*********No browser argument(-D browser=?) provided defaulting to chrome*********")
-        driver = get_browser('chrome')
-        context.wrapper = driver
+        print("*********Non-browser test*********")    
+        
 
 
 def after_all(context):
     context.wrapper.close()
 
 
-def before_scenario(context, scenario):
-    print("This is before scenario")
-    if 'web' in context.tags:
-        context.browser = webdriver.Firefox()
-        context.browser.implicitly_wait(10)
+            
 
 
-def after_scenario(context, scenario):
-    print("This is after scenario")
-    if 'web' in context.tags:
-        context.browser.quit()
+# def before_scenario(context, scenario):
+#     print("This is before scenario")
+#     if 'web' in context.tags:
+#         context.browser = webdriver.Firefox()
+#         context.browser.implicitly_wait(10)
+
+
+# def after_scenario(context, scenario):
+#     print("This is after scenario")
+#     if 'web' in context.tags:
+#         context.browser.quit()
