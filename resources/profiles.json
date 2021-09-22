@@ -24,7 +24,7 @@
     },
     "dev": {
         "project_name": "master",
-        "app_url": "https://www.wikipedia.org/",
+        "app_url": "https://www.toolsqa.com/",
         "base_path": "",
         "base_uri": "",
         "email_id": "",
@@ -47,7 +47,7 @@
     },
     "prod": {
         "project_name": "master",
-        "app_url": "https://www.wikipedia.org/",
+        "app_url": "https://www.pypi.org/",
         "base_path": "",
         "base_uri": "",
         "email_id": "",

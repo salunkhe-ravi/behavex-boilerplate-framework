@@ -1,6 +1,7 @@
 from selenium import webdriver
 from traceback import print_stack
 from core.driver_init import get_browser
+from behave.model_core import Status
 
 
 def before_all(context):
@@ -15,15 +16,19 @@ def before_all(context):
             driver = get_browser('edge')
             context.wrapper = driver
     except:
-        print("*********Non-browser test*********")    
-        
+        print("*********Non-browser test*********")
 
 
 def after_all(context):
     context.wrapper.close()
 
 
-            
+def after_step(context, step):
+    print("Inside after step*****************************")
+    print(str(step.status))
+    if step.status == Status.failed:
+        print("FAILED*******" + str(step.name))
+        print("FAILED*******" + str(step.error_message))
 
 
 # def before_scenario(context, scenario):

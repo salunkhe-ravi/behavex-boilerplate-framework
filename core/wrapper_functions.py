@@ -38,37 +38,19 @@ class WrapperFunctions(object):
             id ([type]): provide the id of the element
             text ([type]): provide the text to be entered
         """
-        try:
-            self.find_by_id(id).send_keys(text)
-        except:
-            print_stack()
+        self.find_by_id(id).send_keys(text)
 
     def enter_text_by_name(self, name, text):
-        try:
-            self.find_by_name(name).send_keys(text)
-        except:
-            print_stack()
+        self.find_by_name(name).send_keys(text)
 
     def enter_text_by_xpath(self, xpath, text):
-        try:
-            self.find_by_xpath(xpath).send_keys(text)
-        except:
-            print_stack()
+        self.find_by_xpath(xpath).send_keys(text)
 
     def click_element_by_id(self, id):
-        try:
-            self.find_by_id(id).click()
-        except:
-            print_stack()
+        self.find_by_id(id).click()
 
     def click_element_by_name(self, name):
-        try:
-            self.find_by_name(name).click()
-        except:
-            print_stack()
+        self.find_by_name(name).click()
 
     def click_element_by_xpath(self, xpath):
-        try:
-            self.find_by_xpath(xpath).click()
-        except:
-            print_stack()
+        self.find_by_xpath(xpath).click()
