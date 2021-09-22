@@ -1,10 +1,10 @@
 # -- FILE: features/steps/example_steps.py
 from behave import given, when, then, step
-from utils.util import get_profiles_value
+from pageobjects.home_page import HomePageObject
 
 @given('user navigates to the site')
 def step_impl(context):
-    context.wrapper.open(get_profiles_value(context,'app_url'))
+    HomePageObject.navigate_to_app(context)
 
 
 @when('user enters "{data}" in the search box')
