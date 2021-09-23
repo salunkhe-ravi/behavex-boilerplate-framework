@@ -1,3 +1,5 @@
+from pageobjects.landing_page import LandingPage
+from pageobjects.home_page import HomePage
 from selenium import webdriver
 from traceback import print_stack
 from core.driver_init import get_browser
@@ -8,19 +10,19 @@ def before_all(context):
     try:
         if context.config.userdata['browser'].lower() == 'chrome':
             driver = get_browser('chrome')
-            context.wrapper = driver
+            context.driver = driver
         elif context.config.userdata['browser'].lower() == 'firefox':
             driver = get_browser('firefox')
-            context.wrapper = driver
+            context.driver = driver
         elif context.config.userdata['browser'].lower() == 'edge':
             driver = get_browser('edge')
-            context.wrapper = driver
+            context.driver = driver
     except:
         print("*********Non-browser test*********")
 
 
 def after_all(context):
-    context.wrapper.close()
+    context.driver.close()
 
 
 def after_step(context, step):
@@ -30,6 +32,12 @@ def after_step(context, step):
         print("FAILED*******" + str(step.name))
         print("FAILED*******" + str(step.error_message))
 
+def after_scenario(context, scenario):
+    print("after scenario*********" + "")
+
+def before_scenario(context, scenario):
+    context.homepage = HomePage()
+    context.landingpage = LandingPage()
 
 # def before_scenario(context, scenario):
 #     print("This is before scenario")

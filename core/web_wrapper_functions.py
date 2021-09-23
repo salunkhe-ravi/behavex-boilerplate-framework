@@ -1,16 +1,19 @@
+from hamcrest.core import assert_that
+from hamcrest.core.core.isequal import equal_to
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from traceback import print_stack
+from hamcrest import assert_that
 
 
-class WrapperFunctions(object):
+class WebWrapperFunctions(object):
 
     __TIMEOUT = 10
 
     def __init__(self, driver):
-        super(WrapperFunctions, self).__init__()
-        self._driver_wait = WebDriverWait(driver, WrapperFunctions.__TIMEOUT)
+        super(WebWrapperFunctions, self).__init__()
+        self._driver_wait = WebDriverWait(driver, WebWrapperFunctions.__TIMEOUT)
         self._driver = driver
 
     def open(self, url):
@@ -54,3 +57,15 @@ class WrapperFunctions(object):
 
     def click_element_by_xpath(self, xpath):
         self.find_by_xpath(xpath).click()
+
+    def get_text_by_id(self, id):
+        return self.find_by_id(id).text
+
+    def get_text_by_name(self, name):
+        return self.find_by_name(name).text
+
+    def get_text_by_xpath(self, xpath):
+        return self.find_by_xpath(xpath).text
+
+    def verify_text_equals(self, actual_text, expected_text):
+        assert_that(actual_text, equal_to(expected_text), reason="Text Comparison Failed!")

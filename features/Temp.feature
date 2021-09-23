@@ -6,7 +6,8 @@ Feature: Showing off behave
         Given user navigates to the site
         When user enters "Sachin Tendulkar" in the search box
         And user clicks on the search button
-        Then user lands on search page
+        Then user validates "Sachin RameshTendulkar" on landing page
+        And user validates "Sachin Tendulkar" in header section
 
     @two
     Scenario: Run a simple test2
