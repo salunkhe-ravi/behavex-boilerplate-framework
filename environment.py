@@ -1,8 +1,9 @@
 from pageobjects.landing_page import LandingPage
 from pageobjects.home_page import HomePage
-import traceback 
+import traceback
 from core.driver_init import get_browser
 from behave.model_core import Status
+import allure
 
 
 def before_all(context):
@@ -31,11 +32,21 @@ def after_step(context, step):
         # import pdb; pdb.set_trace()
         # pdb.post_mortem(step.exc_traceback)
         print("FAILED STEP NAME*******" + str(step.name))
+        allure.attach(context.driver.take_screenshot(
+        ), name="Error Screenshot", attachment_type=allure.attachment_type.PNG)
+
         trc = u"".join(traceback.format_tb(step.exc_traceback))
         print("FAILED ERROR TRACE*******" + str(trc))
 
-def after_scenario(context, scenario):
-    print("after scenario*********" + "")
+
+# def after_scenario(context, scenario):
+#     if scenario.status == Status.failed:
+#         print(context.config.userdata['reporter'])
+#         if context.config.userdata['reporter'] == 'allure':
+#             print("Inside screenshot*****************")
+#             allure.attach(context.driver.get_screenshot_as_png(
+#             ), name="Error Screenshot", attachment_type=allure.attachment_type.PNG)
+
 
 def before_scenario(context, scenario):
     context.homepage = HomePage()

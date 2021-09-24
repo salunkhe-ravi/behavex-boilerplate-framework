@@ -12,7 +12,8 @@ class WebWrapperFunctions(object):
 
     def __init__(self, driver):
         super(WebWrapperFunctions, self).__init__()
-        self._driver_wait = WebDriverWait(driver, WebWrapperFunctions.__TIMEOUT)
+        self._driver_wait = WebDriverWait(
+            driver, WebWrapperFunctions.__TIMEOUT)
         self._driver = driver
 
     def open(self, url):
@@ -67,4 +68,8 @@ class WebWrapperFunctions(object):
         return self.find_by_xpath(xpath).text
 
     def verify_text_equals(self, actual_text, expected_text):
-        assert_that(actual_text, equal_to(expected_text), reason="Text Comparison Failed!")
+        assert_that(actual_text, equal_to(expected_text),
+                    reason=" Text Comparison Failed! ")
+
+    def take_screenshot(self):
+        return self._driver.get_screenshot_as_png()
