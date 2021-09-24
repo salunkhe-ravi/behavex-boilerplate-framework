@@ -115,11 +115,11 @@ function Collapsible_expandAllFailed()
         </div>
         <div id="summary">
           <p id="totals">
-            <p id="feature_totals">Features: failed: 1</p>
-            <p id="scenario_totals">Scenarios: failed: 1, skipped: 3</p>
-            <p id="step_totals">Steps: passed: 3, failed: 1, skipped: 13</p>
+            <p id="feature_totals">Features: failed: 2</p>
+            <p id="scenario_totals">Scenarios: failed: 2, passed: 2</p>
+            <p id="step_totals">Steps: passed: 16, failed: 2, skipped: 2</p>
           </p>
-          <p id="duration">Finished in 5.1 seconds</p>
+          <p id="duration">Finished in 13.1 seconds</p>
           <div id="expand-collapse">
             <a id="expander" href="#" onclick="Collapsible_expandAll('scenario_steps')">Expand All</a>
             <span> | </span>
@@ -131,12 +131,12 @@ function Collapsible_expandAllFailed()
       </div>
       <div class="feature">
         <h2>
-          <span class="val">Feature: Showing off behave</span>
+          <span class="val">Feature: Cricket1</span>
         </h2>
         <span/>
       </div>
       <div class="scenario">
-        <span class="scenario_file">features/Temp.feature:5</span>
+        <span class="scenario_file">features/Cricket1.feature:5</span>
         <span class="tag">@one</span>
         <h3 onclick="Collapsible_toggle('scenario_0')" class="failed">
           <span class="val">Scenario: Run a simple test1</span>
@@ -146,7 +146,7 @@ function Collapsible_expandAllFailed()
             <div class="step_name">
               <span class="keyword">Given </span>
               <span class="step val">user navigates to the site</span>
-              <small class="step_duration">(2.764s)</small>
+              <small class="step_duration">(2.851s)</small>
             </div>
             <div class="step_file">
               <span>steps/example.py:5</span>
@@ -161,7 +161,7 @@ function Collapsible_expandAllFailed()
                 <b>Sachin Tendulkar</b>
                 <span>&quot; in the search box</span>
               </span>
-              <small class="step_duration">(0.058s)</small>
+              <small class="step_duration">(0.050s)</small>
             </div>
             <div class="step_file">
               <span>steps/example.py:10</span>
@@ -172,7 +172,7 @@ function Collapsible_expandAllFailed()
             <div class="step_name">
               <span class="keyword">And </span>
               <span class="step val">user clicks on the search button</span>
-              <small class="step_duration">(2.228s)</small>
+              <small class="step_duration">(2.749s)</small>
             </div>
             <div class="step_file">
               <span>steps/example.py:15</span>
@@ -187,7 +187,7 @@ function Collapsible_expandAllFailed()
                 <b>Sachin RameshTendulkar</b>
                 <span>&quot; on landing page</span>
               </span>
-              <small class="step_duration">(0.079s)</small>
+              <small class="step_duration">(0.036s)</small>
             </div>
             <div class="step_file">
               <span>steps/example.py:20</span>
@@ -205,30 +205,232 @@ Expected: 'Sachin RameshTendulkar'
         <span/>
       </div>
       <div class="scenario">
-        <span class="scenario_file">features/Temp.feature:13</span>
+        <span class="scenario_file">features/Cricket1.feature:13</span>
         <span class="tag">@two</span>
         <h3 onclick="Collapsible_toggle('scenario_1')">
           <span class="val">Scenario: Run a simple test2</span>
         </h3>
-        <ol class="scenario_steps" id="scenario_1"/>
+        <ol class="scenario_steps" id="scenario_1">
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Given </span>
+              <span class="step val">user navigates to the site</span>
+              <small class="step_duration">(0.690s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:5</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">When </span>
+              <span class="step val">
+                <span>user enters &quot;</span>
+                <b>Dilip Vengsarkar</b>
+                <span>&quot; in the search box</span>
+              </span>
+              <small class="step_duration">(0.060s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:10</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">user clicks on the search button</span>
+              <small class="step_duration">(1.835s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:15</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Then </span>
+              <span class="step val">
+                <span>user validates &quot;</span>
+                <b>Dilip Balwant Vengsarkar</b>
+                <span>&quot; on landing page</span>
+              </span>
+              <small class="step_duration">(0.032s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:20</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">
+                <span>user validates &quot;</span>
+                <b>Dilip Vengsarkar</b>
+                <span>&quot; in header section</span>
+              </span>
+              <small class="step_duration">(0.032s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:25</span>
+            </div>
+            <span class="embed"/>
+          </li>
+        </ol>
+        <span/>
+      </div>
+      <div class="feature">
+        <h2>
+          <span class="val">Feature: Cricket2</span>
+        </h2>
         <span/>
       </div>
       <div class="scenario">
-        <span class="scenario_file">features/Temp.feature:20</span>
+        <span class="scenario_file">features/Cricket2.feature:5</span>
         <span class="tag">@three</span>
         <h3 onclick="Collapsible_toggle('scenario_2')">
           <span class="val">Scenario: Run a simple test3</span>
         </h3>
-        <ol class="scenario_steps" id="scenario_2"/>
+        <ol class="scenario_steps" id="scenario_2">
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Given </span>
+              <span class="step val">user navigates to the site</span>
+              <small class="step_duration">(0.189s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:5</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">When </span>
+              <span class="step val">
+                <span>user enters &quot;</span>
+                <b>Sunil Gavaskar</b>
+                <span>&quot; in the search box</span>
+              </span>
+              <small class="step_duration">(0.039s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:10</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">user clicks on the search button</span>
+              <small class="step_duration">(1.803s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:15</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Then </span>
+              <span class="step val">
+                <span>user validates &quot;</span>
+                <b>Sunil Manohar Gavaskar</b>
+                <span>&quot; on landing page</span>
+              </span>
+              <small class="step_duration">(0.030s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:20</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">
+                <span>user validates &quot;</span>
+                <b>Sunil Gavaskar</b>
+                <span>&quot; in header section</span>
+              </span>
+              <small class="step_duration">(0.032s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:25</span>
+            </div>
+            <span class="embed"/>
+          </li>
+        </ol>
         <span/>
       </div>
       <div class="scenario">
-        <span class="scenario_file">features/Temp.feature:27</span>
+        <span class="scenario_file">features/Cricket2.feature:13</span>
         <span class="tag">@four</span>
-        <h3 onclick="Collapsible_toggle('scenario_3')">
+        <h3 onclick="Collapsible_toggle('scenario_3')" class="failed">
           <span class="val">Scenario: Run a simple test4</span>
         </h3>
-        <ol class="scenario_steps" id="scenario_3"/>
+        <ol class="scenario_steps" id="scenario_3">
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Given </span>
+              <span class="step val">user navigates to the site</span>
+              <small class="step_duration">(0.170s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:5</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">When </span>
+              <span class="step val">
+                <span>user enters &quot;</span>
+                <b>Rahul Dravid</b>
+                <span>&quot; in the search box</span>
+              </span>
+              <small class="step_duration">(0.041s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:10</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">user clicks on the search button</span>
+              <small class="step_duration">(2.422s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:15</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step failed">
+            <div class="step_name">
+              <span class="keyword">Then </span>
+              <span class="step val">
+                <span>user validates &quot;</span>
+                <b>RahulSharad Dravid</b>
+                <span>&quot; on landing page</span>
+              </span>
+              <small class="step_duration">(0.081s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/example.py:20</span>
+            </div>
+            <span class="embed">
+              <a onclick="Collapsible_toggle('embed_2')">Error Message</a>
+              <pre id="embed_2" style="display: none">Assertion Failed: Text Comparison Failed!
+Expected: 'RahulSharad Dravid'
+     but: was 'Rahul Sharad Dravid'
+</pre>
+                  
+            </span>
+          </li>
+        </ol>
         <span/>
       </div>
     </div>

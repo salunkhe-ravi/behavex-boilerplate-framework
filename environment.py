@@ -1,7 +1,6 @@
 from pageobjects.landing_page import LandingPage
 from pageobjects.home_page import HomePage
-from selenium import webdriver
-from traceback import print_stack
+import traceback 
 from core.driver_init import get_browser
 from behave.model_core import Status
 
@@ -26,11 +25,14 @@ def after_all(context):
 
 
 def after_step(context, step):
-    print("Inside after step*****************************")
-    print(str(step.status))
+    # print("Inside after step*****************************")
+    # print(str(step.status))
     if step.status == Status.failed:
-        print("FAILED*******" + str(step.name))
-        print("FAILED*******" + str(step.error_message))
+        # import pdb; pdb.set_trace()
+        # pdb.post_mortem(step.exc_traceback)
+        print("FAILED STEP NAME*******" + str(step.name))
+        trc = u"".join(traceback.format_tb(step.exc_traceback))
+        print("FAILED ERROR TRACE*******" + str(trc))
 
 def after_scenario(context, scenario):
     print("after scenario*********" + "")
