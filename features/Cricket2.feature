@@ -1,4 +1,5 @@
 # -- FILE: features/example.feature
+@all
 Feature: Cricket2
 
     @three

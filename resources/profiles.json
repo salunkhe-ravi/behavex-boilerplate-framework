@@ -2,7 +2,7 @@
     "stage": {
         "project_name": "master",
         "app_url": "https://www.wikipedia.org/",
-        "base_path": "",
+        "base_path": "https://jsonplaceholder.typicode.com",
         "base_uri": "",
         "email_id": "",
         "db_ipaddress": "",

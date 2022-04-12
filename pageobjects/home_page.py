@@ -7,7 +7,6 @@ class HomePage():
     _search_box = "searchInput"
     _search_button = "//i[@class='sprite svg-search-icon']"
 
-
     def __init__(self):
         pass
 

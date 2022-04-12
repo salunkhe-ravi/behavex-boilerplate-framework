@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: behave-html-formatter
+Version: 0.9.8
+Summary: HTML formatter for Behave
+Home-page: https://github.com/behave-contrib/behave-html-formatter
+Author: Petr Schindler
+Author-email: pschindl@redhat.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Testing :: BDD
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: behave
+
+# HTML formatter for Behave
+
+To use it with behave create `behave.ini` file in project folder (or in home) with
+following content:
+
+```ini
+# -- FILE: behave.ini
+# Define ALIAS for HtmlFormatter.
+[behave.formatters]
+html = behave_html_formatter:HTMLFormatter
+```
+
+and then use it by running behave with `-f`/`--format` parameter, e.g.
+
+```console
+behave -f help
+behave -f html
+behave -f html -o behave-report.html
+```
+
+You can find information about behave and user-defined formatters in the
+[behave docs](https://behave.readthedocs.io/en/latest/formatters.html).
+
+## Contributing
+
+You want to help with improving this software? Please create an issue in
+our open bug tracker, or open a pull request directly.
+
+We use [tox](https://pypi.org/project/tox/) for running linting and tests,
+e.g.
+
+```console
+tox
+tox -l
+tox -e flake8,behave
+```
+
+For code formatting we use [black](https://pypi.org/project/black/), which
+you can run using our Tox setup, e.g.
+
+```console
+tox -e black
+```
+
+
